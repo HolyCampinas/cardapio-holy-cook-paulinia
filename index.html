@@ -45,23 +45,23 @@ a{color:inherit}
 .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
 
 /* ---------- HERO ---------- */
-.hero{text-align:center;padding:30px 16px 26px}
-.hero-logo{width:104px;margin:0 auto 12px}
+.hero{text-align:center;padding:16px 16px 18px}
+.hero-logo{width:66px;margin:0 auto 8px}
 .hero h1{
   font-family:'Lilita One',cursive;font-weight:400;
-  font-size:clamp(2.4rem,10vw,4rem);line-height:.94;
-  margin:0 0 12px;letter-spacing:.5px;
+  font-size:clamp(1.95rem,8.4vw,3rem);line-height:.95;
+  margin:0 0 9px;letter-spacing:.5px;
 }
 .hero .tag{
   display:inline-block;background:var(--creme);
-  font-family:'Lilita One',cursive;font-size:clamp(.82rem,3.2vw,1rem);
-  letter-spacing:.3px;padding:8px 18px;border-radius:999px;margin-bottom:18px;
-  line-height:1.4;max-width:24ch;
+  font-family:'Lilita One',cursive;font-size:clamp(.74rem,2.9vw,.9rem);
+  letter-spacing:.3px;padding:6px 15px;border-radius:999px;margin-bottom:13px;
+  line-height:1.35;max-width:31ch;
 }
-.hero-foto{max-width:340px;margin:0 auto;border-radius:24px;overflow:hidden;box-shadow:var(--sombra)}
-.hero-foto img{width:100%;aspect-ratio:4/3.2;object-fit:cover;object-position:center 40%}
+.hero-foto{max-width:300px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:var(--sombra)}
+.hero-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 42%}
 
-.cta{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:20px 0 0}
+.cta{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:15px 0 0}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   font-family:'Lilita One',cursive;font-size:.95rem;letter-spacing:.4px;
@@ -124,7 +124,9 @@ h2{
   .destaque{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch}
   .destaque img{height:100%;aspect-ratio:16/11}
   .destaque .corpo{align-self:center;padding:22px 24px}
-  .hero-foto{max-width:400px}
+  .hero-foto{max-width:360px}
+  .hero{padding:26px 16px 24px}
+  .hero-logo{width:84px}
 }
 
 /* lista de itens */
@@ -175,7 +177,11 @@ footer .end strong{font-family:'Lilita One',cursive;font-weight:400;letter-spaci
 footer .links{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
 footer .creditos{margin-top:24px;font-size:.74rem;opacity:.5;line-height:1.5}
 
-.flutuante{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:60;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.flutuante{
+  position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:60;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);transition:opacity .25s ease,transform .25s ease;
+}
+.flutuante.escondido{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(14px)}
 </style>
 </head>
 <body>
@@ -714,6 +720,14 @@ footer .creditos{margin-top:24px;font-size:.74rem;opacity:.5;line-height:1.5}
 </a>
 
 <script>
+(function(){
+  var flut = document.querySelector('.flutuante');
+  var cta = document.querySelector('.cta');
+  flut.classList.add('escondido');
+  new IntersectionObserver(function(es){
+    flut.classList.toggle('escondido', es[0].isIntersecting);
+  }, { threshold: 0 }).observe(cta);
+})();
 (function(){
   var links = [].slice.call(document.querySelectorAll('.nav a'));
   var map = {};
