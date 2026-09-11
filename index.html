@@ -25,12 +25,11 @@
   --rosa:#FBD4D9;
   --rosa-claro:#FDE9EC;
   --creme:#FDE6C9;
-  --creme-claro:#FEF3E4;
+  --creme-claro:#FEF4E7;
   --marrom:#5B3A2E;
-  --marrom-escuro:#48291F;
   --coral:#EF5B25;
   --branco:#FFFBF8;
-  --sombra:0 4px 18px rgba(91,58,46,.13);
+  --sombra:0 3px 14px rgba(91,58,46,.12);
 }
 *{box-sizing:border-box}
 body{
@@ -40,162 +39,143 @@ body{
   font-family:'Quicksand',system-ui,-apple-system,'Segoe UI',sans-serif;
   font-weight:600;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;text-align:center;padding:34px 18px 30px;overflow:hidden}
-.hero::after{
-  content:"";position:absolute;inset:auto 0 -1px 0;height:60px;
-  background:linear-gradient(to bottom,transparent,var(--rosa));
-}
-.hero-logo{width:118px;margin:0 auto 14px}
+.hero{text-align:center;padding:30px 16px 26px}
+.hero-logo{width:104px;margin:0 auto 12px}
 .hero h1{
   font-family:'Lilita One',cursive;font-weight:400;
-  font-size:clamp(2.6rem,11vw,4.4rem);line-height:.92;
+  font-size:clamp(2.4rem,10vw,4rem);line-height:.94;
   margin:0 0 12px;letter-spacing:.5px;
 }
 .hero .tag{
-  display:inline-block;background:var(--creme);color:var(--marrom);
-  font-family:'Lilita One',cursive;font-size:clamp(.85rem,3.4vw,1.05rem);
-  letter-spacing:.4px;padding:7px 16px;border-radius:999px;margin-bottom:20px;
-  line-height:1.35;max-width:22ch;
+  display:inline-block;background:var(--creme);
+  font-family:'Lilita One',cursive;font-size:clamp(.82rem,3.2vw,1rem);
+  letter-spacing:.3px;padding:8px 18px;border-radius:999px;margin-bottom:18px;
+  line-height:1.4;max-width:24ch;
 }
-.hero-foto{
-  max-width:330px;margin:0 auto;border-radius:26px;overflow:hidden;
-  box-shadow:var(--sombra);position:relative;z-index:1;
-}
-.hero-foto img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:center 42%}
+.hero-foto{max-width:340px;margin:0 auto;border-radius:24px;overflow:hidden;box-shadow:var(--sombra)}
+.hero-foto img{width:100%;aspect-ratio:4/3.2;object-fit:cover;object-position:center 40%}
 
-.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 4px;position:relative;z-index:2}
+.cta{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:20px 0 0}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  font-family:'Lilita One',cursive;font-size:1rem;letter-spacing:.4px;
-  padding:13px 22px;border-radius:999px;text-decoration:none;
+  font-family:'Lilita One',cursive;font-size:.95rem;letter-spacing:.4px;
+  padding:12px 20px;border-radius:999px;text-decoration:none;
   box-shadow:var(--sombra);transition:transform .15s ease;
 }
 .btn:active{transform:scale(.97)}
 .btn-zap{background:#25D366;color:#fff}
 .btn-menu{background:var(--marrom);color:var(--creme-claro)}
-.btn svg{width:19px;height:19px;fill:currentColor;flex:none}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
 
 /* ---------- NAV ---------- */
 .nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(251,212,217,.94);backdrop-filter:blur(10px);
-  border-bottom:2px solid rgba(91,58,46,.13);
+  background:rgba(251,212,217,.95);backdrop-filter:blur(10px);
+  border-bottom:2px solid rgba(91,58,46,.12);
 }
 .nav-scroll{
-  display:flex;gap:8px;overflow-x:auto;padding:11px 18px;
+  display:flex;gap:7px;overflow-x:auto;padding:10px 16px;
   scrollbar-width:none;-webkit-overflow-scrolling:touch;
-  max-width:1080px;margin:0 auto;
+  max-width:1000px;margin:0 auto;
 }
 .nav-scroll::-webkit-scrollbar{display:none}
 .nav a{
   flex:none;text-decoration:none;white-space:nowrap;
-  font-family:'Lilita One',cursive;font-size:.83rem;letter-spacing:.3px;
-  padding:8px 14px;border-radius:999px;
-  background:var(--branco);color:var(--marrom);
-  border:2px solid transparent;transition:all .15s ease;
+  font-family:'Lilita One',cursive;font-size:.8rem;letter-spacing:.3px;
+  padding:7px 13px;border-radius:999px;
+  background:var(--branco);color:var(--marrom);transition:all .15s ease;
 }
 .nav a.on{background:var(--coral);color:#fff}
+@media(min-width:760px){
+  .nav-scroll{flex-wrap:wrap;justify-content:center;overflow:visible}
+}
 
 /* ---------- SEÇÕES ---------- */
-section{padding:42px 0 46px;position:relative}
+section{padding:36px 0 38px}
 section.creme{background:var(--creme-claro)}
 section.marrom{background:var(--marrom);color:var(--creme-claro)}
-section.marrom .item{background:rgba(255,251,248,.07);color:var(--creme-claro)}
-section.marrom .item p{color:rgba(253,233,236,.82)}
-section.marrom .preco{color:#FFB38A}
-section.marrom .holy{color:#FFB38A}
+section.marrom .item{background:rgba(255,251,248,.08)}
+section.marrom p.desc{opacity:1;color:rgba(254,244,231,.86)}
+section.marrom .preco,section.marrom .holy{color:#FFB98F}
+section.marrom .destaque{background:rgba(255,251,248,.08)}
 
 h2{
   font-family:'Lilita One',cursive;font-weight:400;
-  font-size:clamp(1.9rem,7.4vw,2.9rem);line-height:1;
+  font-size:clamp(1.75rem,6.6vw,2.6rem);line-height:1.02;
   margin:0 0 6px;text-align:center;
 }
-.sub{
-  text-align:center;font-size:.92rem;margin:0 auto 26px;max-width:32ch;
-  opacity:.78;line-height:1.45;
-}
+.sub{text-align:center;font-size:.9rem;margin:0 auto 22px;max-width:34ch;opacity:.75;line-height:1.45}
 
-/* cards com foto */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.card{
-  background:var(--branco);border-radius:20px;overflow:hidden;
-  box-shadow:var(--sombra);display:flex;flex-direction:column;
-}
-.card-img{aspect-ratio:1/1;overflow:hidden;background:var(--rosa-claro)}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:13px 15px 16px}
-.card h3,.item h3{
-  font-family:'Lilita One',cursive;font-weight:400;
-  font-size:1.12rem;line-height:1.15;margin:0 0 5px;letter-spacing:.2px;
-}
-.holy{color:var(--coral)}
-.preco{color:var(--coral);font-family:'Lilita One',cursive;white-space:nowrap}
-.card p,.item p{margin:0;font-size:.87rem;line-height:1.4;opacity:.8;font-weight:500}
-
-/* cards destaque (foto grande) */
+/* destaque com foto grande */
 .destaque{
-  display:grid;grid-template-columns:1fr;gap:0;
-  background:var(--branco);border-radius:22px;overflow:hidden;
+  background:var(--branco);border-radius:20px;overflow:hidden;
   box-shadow:var(--sombra);margin-bottom:14px;
 }
 .destaque img{width:100%;aspect-ratio:16/10;object-fit:cover}
-.destaque .card-body{padding:16px 18px 20px}
-.destaque h3{font-size:1.35rem}
-@media(min-width:640px){
-  .destaque{grid-template-columns:1.1fr 1fr;align-items:stretch}
-  .destaque img{height:100%;aspect-ratio:auto;min-height:210px}
-  .destaque .card-body{align-self:center}
+.destaque .corpo{padding:14px 16px 17px}
+.destaque h3{font-size:1.25rem}
+@media(min-width:700px){
+  .destaque{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch}
+  .destaque img{height:100%;aspect-ratio:16/11}
+  .destaque .corpo{align-self:center;padding:22px 24px}
+  .hero-foto{max-width:400px}
 }
 
-/* lista sem foto */
-.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+/* lista de itens */
+.itens{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:700px){.itens{grid-template-columns:1fr 1fr;gap:12px}}
 .item{
-  background:var(--branco);border-radius:16px;padding:14px 16px;
-  box-shadow:0 2px 10px rgba(91,58,46,.09);
+  background:var(--branco);border-radius:16px;padding:12px 14px;
+  box-shadow:0 2px 9px rgba(91,58,46,.08);
+  display:flex;align-items:center;gap:13px;
 }
+.item .thumb{
+  width:78px;height:78px;flex:none;border-radius:50%;object-fit:cover;
+  background:var(--rosa-claro);
+}
+.item .txt{min-width:0}
+h3{
+  font-family:'Lilita One',cursive;font-weight:400;
+  font-size:1.05rem;line-height:1.18;margin:0 0 4px;letter-spacing:.2px;
+}
+.holy{color:var(--coral)}
+.preco{color:var(--coral);font-family:'Lilita One',cursive;white-space:nowrap}
+p.desc{margin:0;font-size:.84rem;line-height:1.38;opacity:.78;font-weight:500}
 
 /* faixa de aviso */
 .faixa{
-  background:var(--creme);border-radius:18px;padding:15px 18px;margin-top:18px;
-  text-align:center;font-size:.95rem;line-height:1.45;color:var(--marrom);
+  background:var(--creme);border-radius:16px;padding:14px 18px;margin-top:16px;
+  text-align:center;font-size:.92rem;line-height:1.5;
 }
 .faixa strong{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.3px}
-section.marrom .faixa{background:rgba(253,230,201,.15);color:var(--creme-claro)}
+section.marrom .faixa{background:rgba(253,230,201,.14)}
+.faixa a{color:var(--coral);text-decoration:none}
 
 /* promoções */
-.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.promo{
-  background:var(--branco);border-radius:18px;padding:16px 14px;text-align:center;
-  box-shadow:var(--sombra);
-}
-.promo .dia{
-  font-family:'Lilita One',cursive;font-size:1.05rem;letter-spacing:.5px;
-  color:var(--marrom);display:block;margin-bottom:7px;
-}
-.promo .o-que{color:var(--coral);font-size:.93rem;line-height:1.3;font-weight:700}
-.promo small{display:block;margin-top:7px;font-size:.72rem;opacity:.65;line-height:1.3}
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:700px){.promo-grid{grid-template-columns:repeat(3,1fr);gap:12px}}
+.promo{background:var(--branco);border-radius:16px;padding:14px 12px;text-align:center;box-shadow:var(--sombra)}
+.promo .dia{font-family:'Lilita One',cursive;font-size:1rem;letter-spacing:.5px;display:block;margin-bottom:6px}
+.promo .o-que{color:var(--coral);font-size:.88rem;line-height:1.32;font-weight:700}
+.promo small{display:block;margin-top:6px;font-size:.7rem;opacity:.62;line-height:1.3}
 
 /* footer */
-footer{background:var(--marrom);color:var(--creme-claro);padding:44px 0 110px;text-align:center}
-footer .logo-pe{width:96px;margin:0 auto 18px;filter:brightness(0) saturate(100%) invert(93%) sepia(16%) saturate(430%) hue-rotate(316deg) brightness(103%) contrast(97%)}
-footer h2{color:var(--coral);margin-bottom:14px}
-footer .end{font-size:.98rem;line-height:1.55;margin:0 0 20px}
+footer{background:var(--marrom);color:var(--creme-claro);padding:0 0 96px;text-align:center}
+.foto-loja{width:100%;max-height:280px;object-fit:cover;object-position:center 45%}
+footer .conteudo{padding:32px 16px 0}
+footer h2{color:#FFB98F;margin-bottom:12px}
+footer .end{font-size:.96rem;line-height:1.55;margin:0 0 18px}
 footer .end strong{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.4px;font-size:1.05rem}
-footer .links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
+footer .links{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+footer .creditos{margin-top:24px;font-size:.74rem;opacity:.5;line-height:1.5}
 
-/* botão flutuante */
-.flutuante{
-  position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:60;
-  box-shadow:0 6px 22px rgba(0,0,0,.28);
-}
+.flutuante{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:60;box-shadow:0 6px 20px rgba(0,0,0,.3)}
 </style>
 </head>
 <body>
@@ -222,7 +202,7 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
     <a href="#milkshakes">Milkshakes</a>
     <a href="#bebidas-geladas">Bebidas geladas</a>
     <a href="#bebidas-quentes">Bebidas quentes</a>
-    <a href="#salgados">Salgados &amp; lanches</a>
+    <a href="#salgados">Salgados</a>
     <a href="#sorvetes">Sorvetes</a>
     <a href="#encomendas">Encomendas</a>
     <a href="#promocoes">Promoções</a>
@@ -234,98 +214,86 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
   <div class="wrap">
     <h2>Cookies com Chocolate</h2>
     <p class="sub">Feitos todo dia, recheados até não caber mais.</p>
-    <div class="grid">
 
-      <article class="card">
-        <div class="card-img"><img src="img/tradicional.jpg" alt="Holy Tradicional" loading="lazy"></div>
-        <div class="card-body">
+    <article class="destaque">
+      <img src="img/kinder-bueno-white.jpg" alt="Holy Kinder Bueno White" loading="lazy">
+      <div class="corpo">
+        <h3><span class="holy">Holy</span> Kinder Bueno White <span class="preco">R$ 20,90</span></h3>
+        <p class="desc">Massa tradicional com pedaços de chocolate ao leite e avelãs, recheado com creme artesanal de avelã e chocolate branco crocante.</p>
+      </div>
+    </article>
+
+    <div class="itens">
+      <div class="item">
+        <img class="thumb" src="img/t/tradicional.jpg" alt="Holy Tradicional" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Tradicional <span class="preco">R$ 12,90</span></h3>
-          <p>Massa tradicional com pedaços de chocolate meio amargo</p>
+          <p class="desc">Massa tradicional com pedaços de chocolate meio amargo</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/choc.jpg" alt="Holy Choc" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/choc.jpg" alt="Holy Choc" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Choc <span class="preco">R$ 18,90</span></h3>
-          <p>Massa tradicional com pedaços de chocolate meio amargo e recheio de chocolate ao leite</p>
+          <p class="desc">Massa tradicional com pedaços de chocolate meio amargo e recheio de chocolate ao leite</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/duo.jpg" alt="Holy Duo" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/duo.jpg" alt="Holy Duo" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Duo <span class="preco">R$ 18,90</span></h3>
-          <p>Massa tradicional com pedaços de chocolate meio amargo e recheio de chocolate branco</p>
+          <p class="desc">Massa tradicional com pedaços de chocolate meio amargo e recheio de chocolate branco</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/mm.jpg" alt="Holy M&amp;M's" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/mm.jpg" alt="Holy M&amp;M's" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> M&amp;M's <span class="preco">R$ 14,90</span></h3>
-          <p>Massa tradicional com pedaços de M&amp;M's e recheio de chocolate ao leite</p>
+          <p class="desc">Massa tradicional com pedaços de M&amp;M's e recheio de chocolate ao leite</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/brigadeiro.jpg" alt="Holy Brigadeiro de Panela" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/brigadeiro.jpg" alt="Holy Brigadeiro de Panela" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Brigadeiro de Panela <span class="preco">R$ 18,90</span></h3>
-          <p>Massa tradicional recheado com verdadeiro brigadeiro de panela artesanal</p>
+          <p class="desc">Massa tradicional recheado com verdadeiro brigadeiro de panela artesanal</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/ouro-branco.jpg" alt="Holy Ouro Branco" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/ouro-branco.jpg" alt="Holy Ouro Branco" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Ouro Branco <span class="preco">R$ 14,90</span></h3>
-          <p>Massa de cacau, com recheio artesanal cremoso de chocolate branco e bombom ouro branco</p>
+          <p class="desc">Massa de cacau, com recheio artesanal cremoso de chocolate branco e bombom ouro branco</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/nutella.jpg" alt="Holy Nutella" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/nutella.jpg" alt="Holy Nutella" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Nutella <span class="preco">R$ 18,90</span></h3>
-          <p>Massa tradicional recheado com muuuuuita nutella</p>
+          <p class="desc">Massa tradicional recheado com muuuuuita nutella</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/ninho-nutella.jpg" alt="Holy Ninho com Nutella" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/ninho-nutella.jpg" alt="Holy Ninho com Nutella" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Ninho com Nutella <span class="preco">R$ 18,90</span></h3>
-          <p>Massa tradicional com recheio de brigadeiro de leite ninho e muita nutella</p>
+          <p class="desc">Massa tradicional com recheio de brigadeiro de leite ninho e muita nutella</p>
         </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img"><img src="img/kinder-nutella.jpg" alt="Holy Kinder com Nutella" loading="lazy"></div>
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/kinder-nutella.jpg" alt="Holy Kinder com Nutella" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Kinder com Nutella <span class="preco">R$ 18,90</span></h3>
-          <p>Massa tradicional com recheio de chocolate kinder bueno e nutella</p>
+          <p class="desc">Massa tradicional com recheio de chocolate kinder bueno e nutella</p>
         </div>
-      </article>
-
-    </div>
-
-    <div style="margin-top:14px">
-      <article class="destaque">
-        <img src="img/kinder-bueno-white.jpg" alt="Holy Kinder Bueno White" loading="lazy">
-        <div class="card-body">
-          <h3><span class="holy">Holy</span> Kinder Bueno White <span class="preco">R$ 20,90</span></h3>
-          <p>Massa tradicional com pedaços de chocolate ao leite e avelãs, recheado com creme artesanal de avelã e chocolate branco crocante.</p>
-        </div>
-      </article>
-
-      <article class="destaque">
-        <img src="img/red-velvet.jpg" alt="Holy Red Velvet" loading="lazy">
-        <div class="card-body">
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/red-velvet.jpg" alt="Holy Red Velvet" loading="lazy">
+        <div class="txt">
           <h3><span class="holy">Holy</span> Red Velvet <span class="preco">R$ 18,90</span></h3>
-          <p>Pedaços de chocolate branco recheado com cheesecake de frutas vermelhas</p>
+          <p class="desc">Pedaços de chocolate branco recheado com cheesecake de frutas vermelhas</p>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
@@ -338,36 +306,48 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
 
     <article class="destaque">
       <img src="img/pistache.jpg" alt="Holy Pistache" loading="lazy">
-      <div class="card-body">
+      <div class="corpo">
         <h3><span class="holy">Holy</span> Pistache <span class="preco">R$ 22,90</span></h3>
-        <p>Massa com pedaços de pistache e recheio de creme de pistache puro com chocolate branco</p>
+        <p class="desc">Massa com pedaços de pistache e recheio de creme de pistache puro com chocolate branco</p>
       </div>
     </article>
 
-    <div class="lista">
+    <div class="itens">
       <div class="item">
-        <h3><span class="holy">Holy</span> Cocada Cremosa <span class="preco">R$ 14,90</span></h3>
-        <p>Massa tradicional e recheio de cocada super cremooooosa</p>
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Cocada Cremosa <span class="preco">R$ 14,90</span></h3>
+          <p class="desc">Massa tradicional e recheio de cocada super cremooooosa</p>
+        </div>
       </div>
       <div class="item">
-        <h3><span class="holy">Holy</span> Limão Siciliano <span class="preco">R$ 16,90</span></h3>
-        <p>Massa tradicional recheado com ganache de limão siciliano</p>
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Limão Siciliano <span class="preco">R$ 16,90</span></h3>
+          <p class="desc">Massa tradicional recheado com ganache de limão siciliano</p>
+        </div>
       </div>
       <div class="item">
-        <h3><span class="holy">Holy</span> Maracujá <span class="preco">R$ 16,90</span></h3>
-        <p>Massa tradicional com recheio de maracujá com chocolate branco</p>
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Maracujá <span class="preco">R$ 16,90</span></h3>
+          <p class="desc">Massa tradicional com recheio de maracujá com chocolate branco</p>
+        </div>
       </div>
       <div class="item">
-        <h3><span class="holy">Holy</span> Doce de Leite com Nozes <span class="preco">R$ 16,90</span></h3>
-        <p>Massa tradicional com recheio de doce de leite e nozes</p>
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Doce de Leite com Nozes <span class="preco">R$ 16,90</span></h3>
+          <p class="desc">Massa tradicional com recheio de doce de leite e nozes</p>
+        </div>
       </div>
       <div class="item">
-        <h3><span class="holy">Holy</span> Churros <span class="preco">R$ 14,90</span></h3>
-        <p>Massa tradicional com recheio doce de leite finalizado com açúcar e canela</p>
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Churros <span class="preco">R$ 14,90</span></h3>
+          <p class="desc">Massa tradicional com recheio doce de leite finalizado com açúcar e canela</p>
+        </div>
       </div>
       <div class="item">
-        <h3><span class="holy">Holy</span> Ninho com Frutas <span class="preco">R$ 16,90</span></h3>
-        <p>Massa com pedaços de chocolate branco recheado com brigadeiro de leite ninho e frutas vermelhas</p>
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Ninho com Frutas <span class="preco">R$ 16,90</span></h3>
+          <p class="desc">Massa com pedaços de chocolate branco recheado com brigadeiro de leite ninho e frutas vermelhas</p>
+        </div>
       </div>
     </div>
 
@@ -384,28 +364,29 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
     <p class="sub">Cookie, brownie ou torta? Você escolhe.</p>
 
     <article class="destaque">
-      <img src="img/brownie.jpg" alt="Holy Brownie" loading="lazy">
-      <div class="card-body">
-        <h3><span class="holy">Holy</span> Brownie <span class="preco">R$ 12,90</span></h3>
-        <p>Receita exclusiva, feito com muito chocolate. Extremamente macio. <em>(o pedaço)</em></p>
-      </div>
-    </article>
-
-    <article class="destaque">
       <img src="img/torta.jpg" alt="Torta Perfeita da Holy" loading="lazy">
-      <div class="card-body">
+      <div class="corpo">
         <h3>Torta Perfeita da Holy <span class="preco">R$ 22,90</span></h3>
-        <p>Nossa torta feita com a massa tradicional de cookie da Holy e recheada com Kinder e muitaa Nutella! <em>(o pedaço)</em><br><br>Pedaços disponíveis toda <strong>quinta e sexta</strong>.</p>
+        <p class="desc">Nossa torta feita com a massa tradicional de cookie da Holy e recheada com Kinder e muitaa Nutella! O pedaço. Disponível toda <strong>quinta e sexta</strong>.</p>
       </div>
     </article>
 
-    <article class="destaque">
-      <img src="img/sorvete-cookie.jpg" alt="Cookie com bola de sorvete" loading="lazy">
-      <div class="card-body">
-        <h3>Com bola de sorvete <span class="preco">+R$ 6,90</span></h3>
-        <p>Explosão de sabores que seu dia precisa! Vale no cookie, no brownie ou na torta.</p>
+    <div class="itens">
+      <div class="item">
+        <img class="thumb" src="img/t/brownie.jpg" alt="Holy Brownie" loading="lazy">
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Brownie <span class="preco">R$ 12,90</span></h3>
+          <p class="desc">Receita exclusiva, feito com muito chocolate. Extremamente macio. O pedaço.</p>
+        </div>
       </div>
-    </article>
+      <div class="item">
+        <img class="thumb" src="img/t/sorvete-cookie.jpg" alt="Cookie com bola de sorvete" loading="lazy">
+        <div class="txt">
+          <h3>Com bola de sorvete <span class="preco">+R$ 6,90</span></h3>
+          <p class="desc">Explosão de sabores que seu dia precisa! Vale no cookie, no brownie ou na torta.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -417,28 +398,36 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
 
     <article class="destaque">
       <img src="img/milkshakes.jpg" alt="Milkshakes da Holy Cook" loading="lazy">
-      <div class="card-body">
-        <h3>Cookie <span class="preco">R$ 26,90</span></h3>
-        <p>Sabor baunilha com pedaços de cookie</p>
+      <div class="corpo">
+        <h3>Milkshake de Cookie <span class="preco">R$ 26,90</span></h3>
+        <p class="desc">Sabor baunilha com pedaços de cookie</p>
       </div>
     </article>
 
-    <div class="lista">
+    <div class="itens">
       <div class="item">
-        <h3>Brownie <span class="preco">R$ 28,90</span></h3>
-        <p>Chocolate meio amargo e pedaços do brownie</p>
+        <div class="txt">
+          <h3>Brownie <span class="preco">R$ 28,90</span></h3>
+          <p class="desc">Chocolate meio amargo e pedaços do brownie</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Red Velvet <span class="preco">R$ 28,90</span></h3>
-        <p>Frutas vermelhas e pedaços de cookie red velvet</p>
+        <div class="txt">
+          <h3>Red Velvet <span class="preco">R$ 28,90</span></h3>
+          <p class="desc">Frutas vermelhas e pedaços de cookie red velvet</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Ninho com Nutella <span class="preco">R$ 28,90</span></h3>
-        <p>Leite ninho, nutella e pedaços de cookie</p>
+        <div class="txt">
+          <h3>Ninho com Nutella <span class="preco">R$ 28,90</span></h3>
+          <p class="desc">Leite ninho, nutella e pedaços de cookie</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Pistache <span class="preco">R$ 32,90</span></h3>
-        <p>Pasta pura de pistache com pedaços de pistache triturado e chocolate branco</p>
+        <div class="txt">
+          <h3>Pistache <span class="preco">R$ 32,90</span></h3>
+          <p class="desc">Pasta pura de pistache com pedaços de pistache triturado e chocolate branco</p>
+        </div>
       </div>
     </div>
   </div>
@@ -451,28 +440,36 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
 
     <article class="destaque">
       <img src="img/bebida-gelada.jpg" alt="Expresso Tônica" loading="lazy">
-      <div class="card-body">
+      <div class="corpo">
         <h3>Expresso Tônica <span class="preco">R$ 20,90</span></h3>
-        <p>Xarope Monin de limão siciliano, gelo, café e água tônica</p>
+        <p class="desc">Xarope Monin de limão siciliano, gelo, café e água tônica</p>
       </div>
     </article>
 
-    <div class="lista">
+    <div class="itens">
       <div class="item">
-        <h3>Frappuccino de Nutella <span class="preco">R$ 20,90</span></h3>
-        <p>Leite, gelo, café e muita nutella</p>
+        <div class="txt">
+          <h3>Frappuccino de Nutella <span class="preco">R$ 20,90</span></h3>
+          <p class="desc">Leite, gelo, café e muita nutella</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Frappuccino de Doce de Leite <span class="preco">R$ 20,90</span></h3>
-        <p>Leite, gelo, café e doce de leite feito na Holy</p>
+        <div class="txt">
+          <h3>Frappuccino de Doce de Leite <span class="preco">R$ 20,90</span></h3>
+          <p class="desc">Leite, gelo, café e doce de leite feito na Holy</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Cappuccino Gelado <span class="preco">R$ 22,90</span></h3>
-        <p>Leite, gelo, café, sorvete e chocolate ao leite</p>
+        <div class="txt">
+          <h3>Cappuccino Gelado <span class="preco">R$ 22,90</span></h3>
+          <p class="desc">Leite, gelo, café, sorvete e chocolate ao leite</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Iced Caramel <span class="preco">R$ 18,90</span></h3>
-        <p>Leite, gelo, café e caramelo artesanal da Holy</p>
+        <div class="txt">
+          <h3>Iced Caramel <span class="preco">R$ 18,90</span></h3>
+          <p class="desc">Leite, gelo, café e caramelo artesanal da Holy</p>
+        </div>
       </div>
     </div>
   </div>
@@ -485,46 +482,58 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
 
     <article class="destaque">
       <img src="img/hot-nutella.jpg" alt="Hot Nutella" loading="lazy">
-      <div class="card-body">
+      <div class="corpo">
         <h3>Hot Nutella <span class="preco">R$ 20,90</span></h3>
-        <p>Bebida cremosa quente de avelã com marshmallow</p>
+        <p class="desc">Bebida cremosa quente de avelã com marshmallow</p>
       </div>
     </article>
 
-    <div class="lista">
+    <div class="itens">
       <div class="item">
-        <h3>Café Expresso <span class="preco">R$ 8,90</span></h3>
-        <p>Grão Blend Moka da cafeteira Cambuí</p>
+        <div class="txt">
+          <h3>Café Expresso <span class="preco">R$ 8,90</span></h3>
+          <p class="desc">Grão Blend Moka da cafeteira Cambuí</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Café Expresso Duplo <span class="preco">R$ 10,90</span></h3>
-        <p>Grão Blend Moka da cafeteira Cambuí</p>
+        <div class="txt">
+          <h3>Café Expresso Duplo <span class="preco">R$ 10,90</span></h3>
+          <p class="desc">Grão Blend Moka da cafeteira Cambuí</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Cappuccino Italiano <span class="preco">R$ 12,90</span></h3>
-        <p>Leite vaporizado com café expresso</p>
+        <div class="txt">
+          <h3>Cappuccino Italiano <span class="preco">R$ 12,90</span></h3>
+          <p class="desc">Leite vaporizado com café expresso</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Cappuccino com Chocolate <span class="preco">R$ 14,90</span></h3>
-        <p>Leite vaporizado com café expresso e pedaços de chocolate (opcional: chocolate meio amargo ou canela em pó)</p>
+        <div class="txt">
+          <h3>Cappuccino com Chocolate <span class="preco">R$ 14,90</span></h3>
+          <p class="desc">Leite vaporizado com café expresso e pedaços de chocolate. Opcional: chocolate meio amargo ou canela em pó</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Chocolate Quente <span class="preco">R$ 20,90</span></h3>
-        <p>Chocolate meio amargo e leite vaporizado, muito cremoso</p>
+        <div class="txt">
+          <h3>Chocolate Quente <span class="preco">R$ 20,90</span></h3>
+          <p class="desc">Chocolate meio amargo e leite vaporizado, muito cremoso</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Baunilha <span class="preco">R$ 14,90</span></h3>
-        <p>Leite com extrato puro de baunilha e açúcar</p>
+        <div class="txt">
+          <h3>Baunilha <span class="preco">R$ 14,90</span></h3>
+          <p class="desc">Leite com extrato puro de baunilha e açúcar</p>
+        </div>
       </div>
     </div>
 
-    <h2 style="margin-top:38px">Outras Bebidas</h2>
-    <div class="lista">
-      <div class="item"><h3>Água <span class="preco">R$ 6,90</span></h3></div>
-      <div class="item"><h3>Água com Gás <span class="preco">R$ 6,90</span></h3></div>
-      <div class="item"><h3>Coca-Cola <span class="preco">R$ 8,90</span></h3></div>
-      <div class="item"><h3>Sucos <span class="preco">R$ 9,90</span></h3><p>Consulte os sabores</p></div>
-      <div class="item"><h3>Soda Italiana <span class="preco">R$ 18,90</span></h3><p>Água com gás e xarope Monin (morango e limão)</p></div>
+    <h2 style="margin-top:34px">Outras Bebidas</h2>
+    <div class="itens" style="margin-top:20px">
+      <div class="item"><div class="txt"><h3>Água <span class="preco">R$ 6,90</span></h3></div></div>
+      <div class="item"><div class="txt"><h3>Água com Gás <span class="preco">R$ 6,90</span></h3></div></div>
+      <div class="item"><div class="txt"><h3>Coca-Cola <span class="preco">R$ 8,90</span></h3></div></div>
+      <div class="item"><div class="txt"><h3>Sucos <span class="preco">R$ 9,90</span></h3><p class="desc">Consulte os sabores</p></div></div>
+      <div class="item"><div class="txt"><h3>Soda Italiana <span class="preco">R$ 18,90</span></h3><p class="desc">Água com gás e xarope Monin (morango e limão)</p></div></div>
     </div>
   </div>
 </section>
@@ -536,44 +545,50 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
 
     <article class="destaque">
       <img src="img/croissant-lanche.jpg" alt="Lanchinho de Croissant" loading="lazy">
-      <div class="card-body">
+      <div class="corpo">
         <h3>Lanchinho de Croissant <span class="preco">R$ 30,90</span></h3>
-        <p>Croissant da Merci Merci com presunto alemão, mussarela, mostarda, tomate e alface</p>
+        <p class="desc">Croissant da Merci Merci com presunto alemão, mussarela, mostarda, tomate e alface</p>
       </div>
     </article>
 
-    <article class="destaque">
-      <img src="img/crookie.jpg" alt="Crookie" loading="lazy">
-      <div class="card-body">
-        <h3>Crookie <span class="preco">R$ 28,90</span></h3>
-        <p>Croissant Merci Merci recheado com nossa massa de cookie e muitooooo chocolate meio amargo</p>
-      </div>
-    </article>
-
-    <article class="destaque">
-      <img src="img/queijo-quente.jpg" alt="Holy Queijo Quente" loading="lazy">
-      <div class="card-body">
-        <h3><span class="holy">Holy</span> Queijo Quente <span class="preco">R$ 22,90</span></h3>
-        <p>Pão de azeite da Padoca da Alma + queijo cremoso com cebolinha</p>
-      </div>
-    </article>
-
-    <div class="lista">
+    <div class="itens">
       <div class="item">
-        <h3>Croissant <span class="preco">R$ 16,90</span></h3>
-        <p>Escolha seu adicional: manteiga (+R$ 5,00) ou geleia de frutas vermelhas (+R$ 5,00)</p>
+        <img class="thumb" src="img/t/crookie.jpg" alt="Crookie" loading="lazy">
+        <div class="txt">
+          <h3>Crookie <span class="preco">R$ 28,90</span></h3>
+          <p class="desc">Croissant Merci Merci recheado com nossa massa de cookie e muitooooo chocolate meio amargo</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Salgados Assados <span class="preco">R$ 8,90</span></h3>
-        <p>Consulte nossos sabores</p>
+        <img class="thumb" src="img/t/queijo-quente.jpg" alt="Holy Queijo Quente" loading="lazy">
+        <div class="txt">
+          <h3><span class="holy">Holy</span> Queijo Quente <span class="preco">R$ 22,90</span></h3>
+          <p class="desc">Pão de azeite da Padoca da Alma + queijo cremoso com cebolinha</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Pão na Chapa <span class="preco">R$ 9,90</span></h3>
-        <p>Com manteiga ou requeijão tostado</p>
+        <div class="txt">
+          <h3>Croissant <span class="preco">R$ 16,90</span></h3>
+          <p class="desc">Escolha seu adicional: manteiga (+R$ 5,00) ou geleia de frutas vermelhas (+R$ 5,00)</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Waffle Pão de Queijo <span class="preco">R$ 9,90</span></h3>
-        <p>Pão de queijo em formato de waffle com queijo meia cura</p>
+        <div class="txt">
+          <h3>Salgados Assados <span class="preco">R$ 8,90</span></h3>
+          <p class="desc">Consulte nossos sabores</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="txt">
+          <h3>Pão na Chapa <span class="preco">R$ 9,90</span></h3>
+          <p class="desc">Com manteiga ou requeijão tostado</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="txt">
+          <h3>Waffle Pão de Queijo <span class="preco">R$ 9,90</span></h3>
+          <p class="desc">Pão de queijo em formato de waffle com queijo meia cura</p>
+        </div>
       </div>
     </div>
   </div>
@@ -584,42 +599,49 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
   <div class="wrap">
     <h2>Sorvetes</h2>
     <p class="sub">Produção artesanal, feito aqui na Holy.</p>
-    <div class="lista">
+    <div class="itens">
       <div class="item">
-        <h3>Brownie com Nutella <span class="preco">R$ 18,90</span></h3>
-        <p>Sorvete de Nutella artesanal da Holy com muitoos pedacinhos de brownie</p>
+        <div class="txt">
+          <h3>Brownie com Nutella <span class="preco">R$ 18,90</span></h3>
+          <p class="desc">Sorvete de Nutella artesanal da Holy com muitoos pedacinhos de brownie</p>
+        </div>
       </div>
       <div class="item">
-        <h3>Pistache <span class="preco">R$ 20,90</span></h3>
-        <p>Sorvete de pistache artesanal da Holy com castanha pura de pistache</p>
+        <div class="txt">
+          <h3>Pistache <span class="preco">R$ 20,90</span></h3>
+          <p class="desc">Sorvete de pistache artesanal da Holy com castanha pura de pistache</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ ENCOMENDAS ============ -->
-<section id="encomendas" class="creme" style="padding-top:0">
+<section id="encomendas" class="creme" style="padding-top:4px">
   <div class="wrap">
     <h2>Holy Encomenda!</h2>
+    <p class="sub">Pra sua comemoração, a Holy faz sob encomenda.</p>
 
     <article class="destaque">
       <img src="img/mini-cookies.jpg" alt="Mini cookies" loading="lazy">
-      <div class="card-body">
+      <div class="corpo">
         <h3>Mini Cookies</h3>
-        <p>Encomende mini cookies dos seus sabores favoritos para sua comemoração!<br><br>60g nos sabores Duo, Choc, M&amp;M's, Tradicional e Brigadeiro — consulte nossos valores.</p>
+        <p class="desc">Encomende mini cookies dos seus sabores favoritos! 60g nos sabores Duo, Choc, M&amp;M's, Tradicional e Brigadeiro — consulte nossos valores.</p>
       </div>
     </article>
 
-    <article class="destaque">
-      <img src="img/torta.jpg" alt="Torta inteira da Holy" loading="lazy">
-      <div class="card-body">
-        <h3>Torta Inteirinha <span class="preco">a partir de R$ 159,90</span></h3>
-        <p>São diversos sabores, quentes ou gelados — escolha o seu favorito e verifique nossa disponibilidade! Aproximadamente 1,7kg.</p>
+    <div class="itens">
+      <div class="item">
+        <img class="thumb" src="img/t/torta.jpg" alt="Torta inteira da Holy" loading="lazy">
+        <div class="txt">
+          <h3>Torta Inteirinha <span class="preco">a partir de R$ 159,90</span></h3>
+          <p class="desc">Diversos sabores, quentes ou gelados — escolha o seu favorito e verifique a disponibilidade. Aproximadamente 1,7kg.</p>
+        </div>
       </div>
-    </article>
+    </div>
 
     <div class="faixa">
-      <strong>Encomendas pelo WhatsApp:</strong> <a href="https://wa.me/5519990072339" style="color:var(--coral)">19 99007-2339</a>
+      <strong>Encomendas pelo WhatsApp:</strong> <a href="https://wa.me/5519990072339">19 99007-2339</a>
     </div>
   </div>
 </section>
@@ -646,12 +668,13 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
       </div>
       <div class="promo">
         <span class="dia">Quinta</span>
-        <div class="o-que">Torta Perfeita de Cookie (Kinder + mtaa Nutella)</div>
+        <div class="o-que">Torta Perfeita de Cookie</div>
+        <small>Kinder + mtaa Nutella</small>
       </div>
       <div class="promo">
         <span class="dia">Sexta</span>
-        <div class="o-que">Torta Perfeita de Cookie (Kinder + mtaa Nutella)</div>
-        <small>Último dia da semana</small>
+        <div class="o-que">Torta Perfeita de Cookie</div>
+        <small>Kinder + mtaa Nutella</small>
       </div>
       <div class="promo">
         <span class="dia">Sábado</span>
@@ -663,8 +686,8 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
 </section>
 
 <footer>
-  <div class="wrap">
-    <img class="logo-pe" src="img/logo.png" alt="Holy Cook">
+  <img class="foto-loja" src="img/vem-pra-holy.jpg" alt="Mesa da Holy Cook com milkshakes e cookies" loading="lazy">
+  <div class="conteudo">
     <h2>Vem pra Holy</h2>
     <p class="end">
       <strong>Paulínia</strong><br>
@@ -681,7 +704,7 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
         @holycook.paulinia
       </a>
     </div>
-    <p class="creditos">Preços sujeitos a alteração. Consulte a disponibilidade dos sabores na loja.</p>
+    <p class="creditos">Preços sujeitos a alteração.<br>Consulte a disponibilidade dos sabores na loja.</p>
   </div>
 </footer>
 
@@ -695,19 +718,20 @@ footer .creditos{margin-top:28px;font-size:.75rem;opacity:.5}
   var links = [].slice.call(document.querySelectorAll('.nav a'));
   var map = {};
   links.forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    var el = document.getElementById(id);
-    if (el) map[id] = a;
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    if (el) map[el.id] = a;
   });
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if (!e.isIntersecting) return;
-      links.forEach(function(a){ a.classList.remove('on'); });
       var a = map[e.target.id];
       if (!a) return;
+      links.forEach(function(l){ l.classList.remove('on'); });
       a.classList.add('on');
       var nav = a.parentElement;
-      nav.scrollTo({ left: a.offsetLeft - 60, behavior: 'smooth' });
+      if (nav.scrollWidth > nav.clientWidth + 8) {
+        nav.scrollTo({ left: a.offsetLeft - 60, behavior: 'smooth' });
+      }
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   Object.keys(map).forEach(function(id){ obs.observe(document.getElementById(id)); });
