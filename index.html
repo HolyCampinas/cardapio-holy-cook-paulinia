@@ -134,7 +134,8 @@ h2{
   border-radius:20px;overflow:hidden;box-shadow:var(--sombra);
   margin-bottom:14px;line-height:0;
 }
-.capa-secao img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 62%}
+.capa-secao img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center}
+.capa-secao.baixo img{object-position:center 62%}
 
 /* lista de itens */
 .itens{display:grid;grid-template-columns:1fr;gap:10px}
@@ -466,7 +467,7 @@ footer .creditos{margin-top:24px;font-size:.74rem;opacity:.5;line-height:1.5}
     <h2>Milkshakes</h2>
     <p class="sub">Sábado é dia de milkshake com as besties.</p>
 
-    <div class="capa-secao"><img src="img/milkshakes.jpg" alt="Milkshakes da Holy Cook" loading="lazy"></div>
+    <div class="capa-secao baixo"><img src="img/milkshakes.jpg" alt="Milkshakes da Holy Cook" loading="lazy"></div>
 
     <div class="itens">
       <div class="item">
@@ -513,13 +514,8 @@ footer .creditos{margin-top:24px;font-size:.74rem;opacity:.5;line-height:1.5}
   <div class="wrap">
     <h2>Bebidas Geladas com Café</h2>
 
-    <article class="destaque">
-      <img src="img/bebida-gelada.jpg" alt="Expresso Tônica" loading="lazy">
-      <div class="corpo">
-        <h3>Expresso Tônica <span class="preco">R$ 20,90</span></h3>
-        <p class="desc">Xarope Monin de limão siciliano, gelo, café e água tônica</p>
-      </div>
-    </article>
+    <div class="capa-secao"><img src="img/frappuccinos.jpg" alt="Frappuccino de Nutella e de Doce de Leite" loading="lazy"></div>
+    <p class="sub" style="margin:-4px auto 18px">Base de todos: leite, gelo e café.</p>
 
     <div class="itens">
       <div class="item">
@@ -548,6 +544,13 @@ footer .creditos{margin-top:24px;font-size:.74rem;opacity:.5;line-height:1.5}
         <div class="txt">
           <h3>Iced Caramel <span class="preco">R$ 18,90</span></h3>
           <p class="desc">Leite, gelo, café e caramelo artesanal da Holy</p>
+        </div>
+      </div>
+      <div class="item">
+        <img class="thumb" src="img/t/expresso-tonica.jpg" alt="Expresso Tônica" loading="lazy">
+        <div class="txt">
+          <h3>Expresso Tônica <span class="preco">R$ 20,90</span></h3>
+          <p class="desc">Xarope Monin de limão siciliano, gelo, café e água tônica</p>
         </div>
       </div>
     </div>
