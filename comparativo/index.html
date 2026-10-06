@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loja ou delivery — Holy Cook Paulínia</title>
+<meta name="description" content="O mesmo cookie custa até 47% mais caro no aplicativo de delivery. Compare item por item o preço da Holy Cook Paulínia na loja e no app.">
+<meta name="theme-color" content="#FBD4D9">
+<link rel="icon" href="../img/logo.png">
+<link rel="apple-touch-icon" href="../img/logo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Na loja sai mais barato — Holy Cook Paulínia">
+<meta property="og:description" content="O mesmo cookie, até 47% mais caro no app. Veja a diferença item por item 🍪">
+<meta property="og:image" content="https://holycampinas.github.io/cardapio-holy-cook-paulinia/img/og.jpg">
+<meta property="og:url" content="https://holycampinas.github.io/cardapio-holy-cook-paulinia/comparativo/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rosa:#FBD4D9; --rosa-claro:#FDE9EC; --creme:#FDE6C9; --creme-claro:#FEF4E7;
+  --marrom:#5B3A2E; --coral:#EF5B25; --branco:#FFFBF8; --verde:#1E7A47;
+  --sombra:0 3px 14px rgba(91,58,46,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--rosa);color:var(--marrom);
+  font-family:'Quicksand',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+
+.hero{text-align:center;padding:18px 16px 22px}
+.hero-logo{width:62px;margin:0 auto 10px}
+.hero h1{font-family:'Lilita One',cursive;font-weight:400;
+  font-size:clamp(2rem,8.6vw,3.1rem);line-height:.96;margin:0 0 10px;letter-spacing:.5px}
+.hero .tag{display:inline-block;background:var(--creme);font-family:'Lilita One',cursive;
+  font-size:clamp(.76rem,3vw,.92rem);letter-spacing:.3px;padding:7px 16px;border-radius:999px;
+  margin-bottom:16px;line-height:1.35;max-width:33ch}
+
+.placar{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;max-width:560px;margin:0 auto}
+.placar div{background:var(--branco);border-radius:16px;padding:13px 8px;box-shadow:var(--sombra)}
+.placar b{display:block;font-family:'Lilita One',cursive;font-weight:400;color:var(--coral);
+  font-size:clamp(1.45rem,6.4vw,2rem);line-height:1}
+.placar span{display:block;font-size:.69rem;line-height:1.3;margin-top:5px;opacity:.78}
+
+.cta{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:18px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Lilita One',cursive;
+  font-size:.95rem;letter-spacing:.4px;padding:12px 20px;border-radius:999px;
+  text-decoration:none;box-shadow:var(--sombra);transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-zap{background:#25D366;color:#fff}
+.btn-menu{background:var(--marrom);color:var(--creme-claro)}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,212,217,.95);
+  backdrop-filter:blur(10px);border-bottom:2px solid rgba(91,58,46,.12)}
+.nav-scroll{display:flex;gap:7px;overflow-x:auto;padding:10px 16px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;max-width:1000px;margin:0 auto}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav a{flex:none;text-decoration:none;white-space:nowrap;font-family:'Lilita One',cursive;
+  font-size:.8rem;letter-spacing:.3px;padding:7px 13px;border-radius:999px;
+  background:var(--branco);color:var(--marrom)}
+
+section{padding:30px 0 32px;scroll-margin-top:56px}
+section.creme{background:var(--creme-claro)}
+h2{font-family:'Lilita One',cursive;font-weight:400;
+  font-size:clamp(1.6rem,6.2vw,2.3rem);line-height:1.04;margin:0 0 16px;text-align:center}
+.sub{text-align:center;font-size:.9rem;margin:0 auto 20px;max-width:36ch;opacity:.78;line-height:1.5}
+
+/* ---------- campeões de diferença ---------- */
+.campeoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;
+  max-width:760px;margin:0 auto}
+.campeao{background:var(--branco);border-radius:16px;padding:14px 12px;box-shadow:var(--sombra);
+  text-align:center;border:2px solid rgba(239,91,37,.25)}
+.campeao .pct{display:block;font-family:'Lilita One',cursive;color:var(--coral);
+  font-size:1.75rem;line-height:1}
+.campeao .pct::after{content:" mais caro no app";font-family:'Quicksand',sans-serif;
+  font-size:.6rem;font-weight:700;letter-spacing:.2px;display:block;opacity:.7;color:var(--marrom);margin-top:2px}
+.campeao .qual{display:block;font-weight:700;font-size:.9rem;margin:8px 0 4px;line-height:1.25}
+.campeao .valores{display:block;font-size:.72rem;opacity:.75;line-height:1.35}
+.campeao .valores s{opacity:.8}
+
+/* ---------- lista comparativa ---------- */
+.lista{display:flex;flex-direction:column;gap:8px}
+.linha{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;
+  background:var(--branco);border-radius:16px;padding:10px 13px;box-shadow:var(--sombra)}
+.linha.caro{border-left:5px solid var(--verde)}
+.linha.igual,.linha.so-loja{border-left:5px solid rgba(91,58,46,.16)}
+.thumb{width:46px;height:46px;border-radius:11px;object-fit:cover;flex:none}
+.thumb.vazia{display:grid;place-items:center;background:var(--rosa-claro);font-size:1.1rem}
+.nome strong{display:block;font-size:.95rem;line-height:1.25;font-weight:700}
+.precos{text-align:right;white-space:nowrap}
+.precos .de{display:block;font-size:.8rem;opacity:.6;text-decoration:line-through;
+  text-decoration-thickness:2px;text-decoration-color:var(--coral)}
+.precos .por{display:block;font-family:'Lilita One',cursive;font-weight:400;
+  font-size:1.3rem;line-height:1.1;color:var(--verde)}
+.precos .por.so{color:var(--marrom)}
+.precos .eco{display:block;font-size:.63rem;font-weight:700;color:var(--verde);
+  letter-spacing:.1px;margin-top:2px;line-height:1.35;white-space:nowrap}
+.precos .eco.neutra{color:var(--marrom);opacity:.55}
+@media(max-width:420px){
+  .linha{grid-template-columns:40px 1fr auto;gap:9px;padding:9px 11px}
+  .thumb{width:40px;height:40px}
+  .nome strong{font-size:.88rem}
+  .precos .por{font-size:1.18rem}
+}
+
+/* ---------- porquê ---------- */
+.porque{background:var(--marrom);color:var(--creme-claro)}
+.porque h2{color:var(--creme-claro)}
+.porque .texto{max-width:52ch;margin:0 auto;font-size:.95rem;line-height:1.65}
+.porque .texto p{margin:0 0 12px}
+.porque strong{color:#FFB98F}
+
+/* ---------- rodapé ---------- */
+footer{background:var(--creme);padding:34px 16px 44px;text-align:center}
+footer h2{margin-bottom:10px}
+footer .end{font-size:.95rem;line-height:1.55;margin:0 0 16px}
+footer .links{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+footer .creditos{font-size:.72rem;opacity:.68;margin:20px auto 0;line-height:1.55;max-width:44ch}
+.flutuante{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:60;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);transition:opacity .25s ease,transform .25s ease}
+.flutuante.escondido{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(14px)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="hero-logo" src="../img/logo.png" alt="Holy Cook">
+  <h1>Na loja<br>sai mais barato</h1>
+  <div class="tag">O mesmo cookie, feito na mesma cozinha — e até 47% mais caro no aplicativo</div>
+  <div class="placar">
+    <div><b>27</b><span>dos 38 itens custam mais no app</span></div>
+    <div><b>47%</b><span>a maior diferença de preço</span></div>
+    <div><b>R$10,00</b><span>a maior diferença em reais, num item só</span></div>
+  </div>
+  <div class="cta">
+    <a class="btn btn-menu" href="../">Ver o cardápio completo</a>
+    <a class="btn btn-zap" href="https://wa.me/5519990072339" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2A10 10 0 0 0 3.5 17.2L2 22l5-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3a8.2 8.2 0 1 1 7 3.7z"/></svg>Fazer meu pedido</a>
+  </div>
+</header>
+
+<nav class="nav"><div class="nav-scroll"><a href="#cookies-chocolate">Chocolate</a><a href="#cookies-frutas">Frutas</a><a href="#brownie-torta">Brownie &amp; Torta</a><a href="#milkshakes">Milkshakes</a><a href="#bebidas-geladas">Geladas</a><a href="#bebidas-quentes">Quentes</a><a href="#salgados">Salgados</a><a href="#sorvetes">Sorvetes</a></div></nav>
+
+<section>
+  <div class="wrap">
+    <h2>Onde a diferença dói mais</h2>
+    <p class="sub">Os quatro itens em que o aplicativo cobra mais caro que o nosso balcão.</p>
+    <div class="campeoes"><div class="campeao"><span class="pct">47%</span><span class="qual">Brookie</span><span class="valores">R$ 16,90 na loja · <s>R$ 24,90</s> no app</span></div><div class="campeao"><span class="pct">37%</span><span class="qual">Cookie</span><span class="valores">R$ 26,90 na loja · <s>R$ 36,90</s> no app</span></div><div class="campeao"><span class="pct">35%</span><span class="qual">Crookie</span><span class="valores">R$ 28,90 na loja · <s>R$ 38,90</s> no app</span></div><div class="campeao"><span class="pct">34%</span><span class="qual">Café Expresso</span><span class="valores">R$ 8,90 na loja · <s>R$ 11,90</s> no app</span></div></div>
+  </div>
+</section>
+
+<section id="cookies-chocolate">
+  <div class="wrap">
+    <h2>Cookies com Chocolate</h2>
+    <div class="lista">      <div class="linha caro">
+        <img class="thumb" src="../img/kinder-bueno-white.jpg" alt="Holy Kinder Bueno White" loading="lazy">
+        <div class="nome"><strong>Holy Kinder Bueno White</strong></div>
+        <div class="precos"><span class="de">R$ 24,90</span><span class="por">R$ 20,90</span><span class="eco">economize R$ 4,00<br>19% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/tradicional.jpg" alt="Holy Tradicional" loading="lazy">
+        <div class="nome"><strong>Holy Tradicional</strong></div>
+        <div class="precos"><span class="de">R$ 14,90</span><span class="por">R$ 12,90</span><span class="eco">economize R$ 2,00<br>16% mais barato</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/choc.jpg" alt="Holy Choc" loading="lazy">
+        <div class="nome"><strong>Holy Choc</strong></div>
+        <div class="precos"><span class="por so">R$ 18,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/duo.jpg" alt="Holy Duo" loading="lazy">
+        <div class="nome"><strong>Holy Duo</strong></div>
+        <div class="precos"><span class="por so">R$ 18,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/mm.jpg" alt="Holy M&amp;M&#x27;s" loading="lazy">
+        <div class="nome"><strong>Holy M&amp;M&#x27;s</strong></div>
+        <div class="precos"><span class="de">R$ 16,90</span><span class="por">R$ 14,90</span><span class="eco">economize R$ 2,00<br>13% mais barato</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/brigadeiro.jpg" alt="Holy Brigadeiro de Panela" loading="lazy">
+        <div class="nome"><strong>Holy Brigadeiro de Panela</strong></div>
+        <div class="precos"><span class="por so">R$ 18,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/ouro-branco.jpg" alt="Holy Ouro Branco" loading="lazy">
+        <div class="nome"><strong>Holy Ouro Branco</strong></div>
+        <div class="precos"><span class="de">R$ 18,90</span><span class="por">R$ 14,90</span><span class="eco">economize R$ 4,00<br>27% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/nutella.jpg" alt="Holy Nutella" loading="lazy">
+        <div class="nome"><strong>Holy Nutella</strong></div>
+        <div class="precos"><span class="de">R$ 20,90</span><span class="por">R$ 18,90</span><span class="eco">economize R$ 2,00<br>11% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/ninho-nutella.jpg" alt="Holy Ninho com Nutella" loading="lazy">
+        <div class="nome"><strong>Holy Ninho com Nutella</strong></div>
+        <div class="precos"><span class="de">R$ 20,90</span><span class="por">R$ 18,90</span><span class="eco">economize R$ 2,00<br>11% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/kinder-nutella.jpg" alt="Holy Kinder com Nutella" loading="lazy">
+        <div class="nome"><strong>Holy Kinder com Nutella</strong></div>
+        <div class="precos"><span class="de">R$ 20,90</span><span class="por">R$ 18,90</span><span class="eco">economize R$ 2,00<br>11% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <span class="thumb vazia" aria-hidden="true">🍪</span>
+        <div class="nome"><strong>Cookie França</strong></div>
+        <div class="precos"><span class="por so">R$ 16,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="cookies-frutas" class="creme">
+  <div class="wrap">
+    <h2>Cookies com Frutas &amp; More</h2>
+    <div class="lista">      <div class="linha caro">
+        <img class="thumb" src="../img/pistache.jpg" alt="Holy Pistache" loading="lazy">
+        <div class="nome"><strong>Holy Pistache</strong></div>
+        <div class="precos"><span class="de">R$ 24,90</span><span class="por">R$ 22,90</span><span class="eco">economize R$ 2,00<br>9% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/red-velvet.jpg" alt="Holy Red Velvet" loading="lazy">
+        <div class="nome"><strong>Holy Red Velvet</strong></div>
+        <div class="precos"><span class="de">R$ 20,90</span><span class="por">R$ 18,90</span><span class="eco">economize R$ 2,00<br>11% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/cocada.jpg" alt="Holy Cocada Cremosa" loading="lazy">
+        <div class="nome"><strong>Holy Cocada Cremosa</strong></div>
+        <div class="precos"><span class="de">R$ 16,90</span><span class="por">R$ 14,90</span><span class="eco">economize R$ 2,00<br>13% mais barato</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/limao-siciliano.jpg" alt="Holy Limão Siciliano" loading="lazy">
+        <div class="nome"><strong>Holy Limão Siciliano</strong></div>
+        <div class="precos"><span class="por so">R$ 16,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/maracuja.jpg" alt="Holy Maracujá" loading="lazy">
+        <div class="nome"><strong>Holy Maracujá</strong></div>
+        <div class="precos"><span class="por so">R$ 16,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/doce-leite-nozes.jpg" alt="Holy Doce de Leite com Nozes" loading="lazy">
+        <div class="nome"><strong>Holy Doce de Leite com Nozes</strong></div>
+        <div class="precos"><span class="por so">R$ 16,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/churros.jpg" alt="Holy Churros" loading="lazy">
+        <div class="nome"><strong>Holy Churros</strong></div>
+        <div class="precos"><span class="por so">R$ 14,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/ninho-frutas.jpg" alt="Holy Ninho com Frutas" loading="lazy">
+        <div class="nome"><strong>Holy Ninho com Frutas</strong></div>
+        <div class="precos"><span class="de">R$ 18,90</span><span class="por">R$ 16,90</span><span class="eco">economize R$ 2,00<br>12% mais barato</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="brownie-torta" class="creme">
+  <div class="wrap">
+    <h2>Brownie &amp; Torta</h2>
+    <div class="lista">      <div class="linha caro">
+        <img class="thumb" src="../img/torta.jpg" alt="Torta Perfeita da Holy" loading="lazy">
+        <div class="nome"><strong>Torta Perfeita da Holy</strong></div>
+        <div class="precos"><span class="de">R$ 29,90</span><span class="por">R$ 22,90</span><span class="eco">economize R$ 7,00<br>31% mais barato</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/brownie.jpg" alt="Holy Brownie" loading="lazy">
+        <div class="nome"><strong>Holy Brownie</strong></div>
+        <div class="precos"><span class="por so">R$ 12,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha caro">
+        <span class="thumb vazia" aria-hidden="true">🍪</span>
+        <div class="nome"><strong>Brookie</strong></div>
+        <div class="precos"><span class="de">R$ 24,90</span><span class="por">R$ 16,90</span><span class="eco">economize R$ 8,00<br>47% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/sorvete-cookie.jpg" alt="Com bola de sorvete" loading="lazy">
+        <div class="nome"><strong>Com bola de sorvete</strong></div>
+        <div class="precos"><span class="por so">+R$ 6,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="milkshakes" class="creme">
+  <div class="wrap">
+    <h2>Milkshakes</h2>
+    <div class="lista">      <div class="linha caro">
+        <img class="thumb" src="../img/t/ms-cookie.jpg" alt="Cookie" loading="lazy">
+        <div class="nome"><strong>Cookie</strong></div>
+        <div class="precos"><span class="de">R$ 36,90</span><span class="por">R$ 26,90</span><span class="eco">economize R$ 10,00<br>37% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/ms-brownie.jpg" alt="Brownie" loading="lazy">
+        <div class="nome"><strong>Brownie</strong></div>
+        <div class="precos"><span class="de">R$ 36,90</span><span class="por">R$ 28,90</span><span class="eco">economize R$ 8,00<br>28% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/ms-red-velvet.jpg" alt="Red Velvet" loading="lazy">
+        <div class="nome"><strong>Red Velvet</strong></div>
+        <div class="precos"><span class="de">R$ 36,90</span><span class="por">R$ 28,90</span><span class="eco">economize R$ 8,00<br>28% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/ms-ninho-nutella.jpg" alt="Ninho com Nutella" loading="lazy">
+        <div class="nome"><strong>Ninho com Nutella</strong></div>
+        <div class="precos"><span class="de">R$ 36,90</span><span class="por">R$ 28,90</span><span class="eco">economize R$ 8,00<br>28% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/ms-pistache.jpg" alt="Pistache" loading="lazy">
+        <div class="nome"><strong>Pistache</strong></div>
+        <div class="precos"><span class="por so">R$ 32,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="bebidas-geladas">
+  <div class="wrap">
+    <h2>Bebidas Geladas com Café</h2>
+    <div class="lista">      <div class="linha caro">
+        <img class="thumb" src="../img/t/frap-nutella.jpg" alt="Frappuccino de Nutella" loading="lazy">
+        <div class="nome"><strong>Frappuccino de Nutella</strong></div>
+        <div class="precos"><span class="de">R$ 27,90</span><span class="por">R$ 20,90</span><span class="eco">economize R$ 7,00<br>33% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/frap-doce-leite.jpg" alt="Frappuccino de Doce de Leite" loading="lazy">
+        <div class="nome"><strong>Frappuccino de Doce de Leite</strong></div>
+        <div class="precos"><span class="de">R$ 27,90</span><span class="por">R$ 20,90</span><span class="eco">economize R$ 7,00<br>33% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/cappuccino-gelado.jpg" alt="Cappuccino Gelado" loading="lazy">
+        <div class="nome"><strong>Cappuccino Gelado</strong></div>
+        <div class="precos"><span class="de">R$ 28,90</span><span class="por">R$ 22,90</span><span class="eco">economize R$ 6,00<br>26% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/iced-caramel.jpg" alt="Iced Caramel" loading="lazy">
+        <div class="nome"><strong>Iced Caramel</strong></div>
+        <div class="precos"><span class="de">R$ 23,90</span><span class="por">R$ 18,90</span><span class="eco">economize R$ 5,00<br>26% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/expresso-tonica.jpg" alt="Expresso Tônica" loading="lazy">
+        <div class="nome"><strong>Expresso Tônica</strong></div>
+        <div class="precos"><span class="por so">R$ 20,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="bebidas-quentes" class="creme">
+  <div class="wrap">
+    <h2>Bebidas Quentes</h2>
+    <div class="lista">      <div class="linha so-loja">
+        <img class="thumb" src="../img/hot-nutella.jpg" alt="Hot Nutella" loading="lazy">
+        <div class="nome"><strong>Hot Nutella</strong></div>
+        <div class="precos"><span class="por so">R$ 20,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/cafe-expresso.jpg" alt="Café Expresso" loading="lazy">
+        <div class="nome"><strong>Café Expresso</strong></div>
+        <div class="precos"><span class="de">R$ 11,90</span><span class="por">R$ 8,90</span><span class="eco">economize R$ 3,00<br>34% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/cafe-duplo.jpg" alt="Café Expresso Duplo" loading="lazy">
+        <div class="nome"><strong>Café Expresso Duplo</strong></div>
+        <div class="precos"><span class="por so">R$ 10,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/cappuccino-italiano.jpg" alt="Cappuccino Italiano" loading="lazy">
+        <div class="nome"><strong>Cappuccino Italiano</strong></div>
+        <div class="precos"><span class="por so">R$ 12,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/cappuccino-chocolate.jpg" alt="Cappuccino com Chocolate" loading="lazy">
+        <div class="nome"><strong>Cappuccino com Chocolate</strong></div>
+        <div class="precos"><span class="de">R$ 18,90</span><span class="por">R$ 14,90</span><span class="eco">economize R$ 4,00<br>27% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/chocolate-quente.jpg" alt="Chocolate Quente" loading="lazy">
+        <div class="nome"><strong>Chocolate Quente</strong></div>
+        <div class="precos"><span class="por so">R$ 20,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/baunilha.jpg" alt="Baunilha" loading="lazy">
+        <div class="nome"><strong>Baunilha</strong></div>
+        <div class="precos"><span class="por so">R$ 14,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/agua.jpg" alt="Água" loading="lazy">
+        <div class="nome"><strong>Água</strong></div>
+        <div class="precos"><span class="por so">R$ 6,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/agua-gas.jpg" alt="Água com Gás" loading="lazy">
+        <div class="nome"><strong>Água com Gás</strong></div>
+        <div class="precos"><span class="por so">R$ 6,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha igual">
+        <img class="thumb" src="../img/t/coca-cola.jpg" alt="Coca-Cola" loading="lazy">
+        <div class="nome"><strong>Coca-Cola</strong></div>
+        <div class="precos"><span class="por so">R$ 8,90</span><span class="eco neutra">mesmo preço nos dois</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/suco.jpg" alt="Sucos" loading="lazy">
+        <div class="nome"><strong>Sucos</strong></div>
+        <div class="precos"><span class="por so">R$ 9,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/soda-italiana.jpg" alt="Soda Italiana" loading="lazy">
+        <div class="nome"><strong>Soda Italiana</strong></div>
+        <div class="precos"><span class="por so">R$ 18,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="salgados" class="creme">
+  <div class="wrap">
+    <h2>Salgados &amp; Lanches</h2>
+    <div class="lista">      <div class="linha caro">
+        <img class="thumb" src="../img/croissant-lanche.jpg" alt="Lanchinho de Croissant" loading="lazy">
+        <div class="nome"><strong>Lanchinho de Croissant</strong></div>
+        <div class="precos"><span class="de">R$ 36,90</span><span class="por">R$ 30,90</span><span class="eco">economize R$ 6,00<br>19% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/crookie.jpg" alt="Crookie" loading="lazy">
+        <div class="nome"><strong>Crookie</strong></div>
+        <div class="precos"><span class="de">R$ 38,90</span><span class="por">R$ 28,90</span><span class="eco">economize R$ 10,00<br>35% mais barato</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/queijo-quente.jpg" alt="Holy Queijo Quente" loading="lazy">
+        <div class="nome"><strong>Holy Queijo Quente</strong></div>
+        <div class="precos"><span class="de">R$ 24,90</span><span class="por">R$ 22,90</span><span class="eco">economize R$ 2,00<br>9% mais barato</span></div>
+      </div>      <div class="linha so-loja">
+        <img class="thumb" src="../img/t/croissant.jpg" alt="Croissant" loading="lazy">
+        <div class="nome"><strong>Croissant</strong></div>
+        <div class="precos"><span class="por so">R$ 16,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha so-loja">
+        <span class="thumb vazia" aria-hidden="true">🍪</span>
+        <div class="nome"><strong>Salgados Assados</strong></div>
+        <div class="precos"><span class="por so">R$ 8,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha so-loja">
+        <span class="thumb vazia" aria-hidden="true">🍪</span>
+        <div class="nome"><strong>Pão na Chapa</strong></div>
+        <div class="precos"><span class="por so">R$ 9,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha caro">
+        <img class="thumb" src="../img/t/waffle-pao-queijo.jpg" alt="Waffle Pão de Queijo" loading="lazy">
+        <div class="nome"><strong>Waffle Pão de Queijo</strong></div>
+        <div class="precos"><span class="de">R$ 12,90</span><span class="por">R$ 9,90</span><span class="eco">economize R$ 3,00<br>30% mais barato</span></div>
+      </div>    </div>
+  </div>
+</section>
+<section id="sorvetes">
+  <div class="wrap">
+    <h2>Sorvetes</h2>
+    <div class="lista">      <div class="linha so-loja">
+        <span class="thumb vazia" aria-hidden="true">🍪</span>
+        <div class="nome"><strong>Brownie com Nutella</strong></div>
+        <div class="precos"><span class="por so">R$ 18,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>      <div class="linha so-loja">
+        <span class="thumb vazia" aria-hidden="true">🍪</span>
+        <div class="nome"><strong>Pistache</strong></div>
+        <div class="precos"><span class="por so">R$ 20,90</span><span class="eco neutra">preço da loja</span></div>
+      </div>    </div>
+  </div>
+</section>
+
+<section class="porque">
+  <div class="wrap">
+    <h2>Por que o app é mais caro?</h2>
+    <div class="texto">
+      <p>Porque o aplicativo cobra uma <strong>comissão sobre cada pedido</strong>, e essa comissão
+      entra no preço que aparece na tela do seu celular. Não é o cookie que fica mais caro —
+      é o caminho até você.</p>
+      <p>Na loja não tem esse caminho. Você paga <strong>o preço da nossa etiqueta</strong>,
+      pega o cookie quentinho na hora e ainda escolha o sabor olhando pra vitrine.</p>
+      <p>Quem vem buscar paga menos. Simples assim.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>Vem pra Holy</h2>
+  <p class="end">
+    <strong>Paulínia</strong><br>
+    Av. José Paulino, 1615 — Sala A<br>
+    Parque Irmãos Pedroso
+  </p>
+  <div class="links">
+    <a class="btn btn-zap" href="https://wa.me/5519990072339" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2A10 10 0 0 0 3.5 17.2L2 22l5-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3a8.2 8.2 0 1 1 7 3.7z"/></svg>19 99007-2339</a>
+    <a class="btn btn-menu" href="https://www.instagram.com/holycook.paulinia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.8-.1zm0 5a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/></svg>@holycook.paulinia</a>
+  </div>
+  <p class="creditos">
+    Preço de loja: a nossa etiqueta.
+    Preço de delivery: o que foi efetivamente cobrado nos pedidos do aplicativo
+    entre 1º de agosto e 30 de setembro de 2026.<br>
+    Preços sujeitos a alteração. Consulte a disponibilidade dos sabores na loja.
+  </p>
+</footer>
+
+<a class="btn btn-zap flutuante" href="https://wa.me/5519990072339" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2A10 10 0 0 0 3.5 17.2L2 22l5-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3a8.2 8.2 0 1 1 7 3.7z"/></svg>Fazer meu pedido</a>
+
+<script>
+(function(){
+  var f = document.querySelector('.flutuante'), rod = document.querySelector('footer');
+  if (!f || !rod || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(e){
+    f.classList.toggle('escondido', e[0].isIntersecting);
+  }, {threshold:.15}).observe(rod);
+})();
+</script>
+</body>
+</html>
